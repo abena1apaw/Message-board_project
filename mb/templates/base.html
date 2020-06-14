@@ -2,16 +2,47 @@
 {% load static %}
 <html>
     <head>
+        <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Message Board</title>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
 </head>
 <body>
-    <header><h1><a href="url 'home' %}">Message Board</a></h1>
-   </header>
-  <div>
-    {% block content %}
-    {% endblock content %}
-  </div>
+       <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Abena's Message Board</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+
+                </ul>
+                   </div>
+        </div>
+    </div>
+
+
+      <div class="container body-content">
+{% block content %}{% endblock %}
+        <hr/>
+        <footer>
+            <p>&copy; {{ year }} - Abena's Project 4</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'scripts/respond.js' %}"></script>
+{% block scripts %}{% endblock %}
+
 </body>
 </html>
