@@ -1,5 +1,10 @@
-<h1>Message board homepage</h1>
-<ul>{% for post in all_posts_list %}
-     <li>{{ post.text }}</li>
+{% extends 'base.html' %}
+
+{% block content %}
+  {% for post in object_list %}
+    <div class="post_entry">
+      <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
+      <p>{{ post.text }}</p>
+    </div>
      {% endfor %}
-</ul>
+    {% endblock content %}
