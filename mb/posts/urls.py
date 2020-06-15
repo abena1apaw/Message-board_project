@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.urls import path
 
-from .views import HomePageView, PostDetailView
+
+from .views import HomePageView, PostDetailView, AboutUs, ContactUs, StockChart
 
 urlpatterns = [
     path('post/<int:pk>/', PostDetailView.as_view(), name='post_detail'),
     path('', HomePageView.as_view(), name='home'),
+    path('about/', AboutUs.as_view(), name='about'),
+    path('contact/', ContactUs.as_view(), name='contact'),
+     path('chart/', StockChart.as_view(), name='chart'),
 ]
