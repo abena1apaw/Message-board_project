@@ -29,3 +29,8 @@ class StockChart(ListView):
     model = Post
     template_name = 'chart.html'
 
+class StockScreener(ListView):
+    model = Post
+    template_name = 'stock_screener.html'
+
+

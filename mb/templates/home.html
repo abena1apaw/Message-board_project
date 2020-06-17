@@ -3,11 +3,14 @@
 {% block content %}
  <p>&nbsp;</p>
   {% for post in object_list %}
-
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
     <div class="post_entry">
 
       <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
       <ul><li>{{ post.text }}</li></ul>
     </div>
+  </div>
+</div>
      {% endfor %}
     {% endblock content %}
