@@ -1,14 +1,18 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
 {% block content %}
 
-<p>$nbsp;</p>
+<p></p>
 
 
 <!-- TradingView Widget BEGIN -->
-<div class="jumbotron jumbotron-fluid">
+
   <div class="container">
  <h2>Stock Screener</h2>
+     <div class="post-entry">
+      <h2>{{ post.title }}</h2>
+      <p>{{ post.text }}</p>
+
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/screener/" rel="noopener" target="_blank"><span class="blue-text">Stock Screener</span></a> by TradingView</div>
@@ -26,9 +30,9 @@
   </script>
 </div>
 </div>
-</div>
-</div>
+  </div>
+
 <!-- TradingView Widget END -->
 
 
-{% endblock content %}
+{% endblock %}
